@@ -4,11 +4,14 @@ namespace BeyondCode\Comments;
 
 use Exception;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 use BeyondCode\Comments\Traits\HasComments;
 
-class Comment extends Model
+class Comment extends Model implements HasMedia
 {
     use HasComments;
+    use InteractsWithMedia;
 
     protected $fillable = [
         'comment',
