@@ -7,10 +7,13 @@ use BeyondCode\Comments\Events\CommentDeleted;
 use BeyondCode\Comments\Traits\HasComments;
 use Exception;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
-class Comment extends Model
+class Comment extends Model implements HasMedia
 {
     use HasComments;
+    use InteractsWithMedia;
 
     protected $fillable = [
         'comment',
